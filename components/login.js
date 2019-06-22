@@ -2,22 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, ImageBackground, TextInput, TouchableOpacity, Alert } from 'react-native';
 import styles from './style';
 import axi from '../bootstrap';
+import {AsyncStorage} from 'react-native';
 
 
 const Login=()=>{
 	const [user, setUser] = useState({});
 	const [email, setEmail] = useState('hola@hotmail.com');
 	const [pass, setPass] = useState('hola');
-	useEffect(()=>{console.log(email)});
+	//useEffect(()=>{console.log(email)});
 	const  logan = () => {
 		console.log(email)
 		console.log(pass)
+	
 		axi.post('/api/auth/login',{"email":email,"password":pass})
-		.then(response=> {
+		.then(async response=> {
 			console.log(response.data);
 			Alert.alert('Esta sesion expira el '+response.data.expires_at)
-		}).catch(response=>{
-			console.log(response)
+			await AsyncStorage.setItem('secure_token',response.data.access_token);
+		}).catch(e=>{
+			console.log(e.response.data)
 			Alert.alert('Las credenciales no coinciden con nuestras bases de datos')
 		})
 	}
