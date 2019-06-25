@@ -1,8 +1,9 @@
-import React, { useLayoutEffect, useEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useState, useContext} from 'react';
 import {AsyncStorage, View, Text, ActivityIndicator} from 'react-native';
 import Login from './components/login';
+import Dashboard from './components/dashboard/dashboard';
 import axi from './bootstrap';
-
+import {UserProvider} from './UserContext';
 
 const App=()=>{
 	const [auth, setAuth] = useState(false);
@@ -22,8 +23,8 @@ const App=()=>{
 	}
 	fetchData()
 	},[])
-	if(auth)return <Text>TE AMO</Text>
-	if(log)return <Login />
+	if(auth)return <UserProvider axi={axi} auth={[auth,setAuth]} log={[log,setLog]} user={[user,setUser]}><Dashboard /></UserProvider>
+	if(log)return <Login auth={setAuth}/>
 	
 	return (
 		<View style={{flex: 1,justifyContent: 'center'}}>

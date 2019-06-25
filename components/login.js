@@ -5,7 +5,7 @@ import axi from '../bootstrap';
 import {AsyncStorage} from 'react-native';
 
 
-const Login=()=>{
+const Login=props=>{
 	const [user, setUser] = useState({});
 	const [email, setEmail] = useState('hola@hotmail.com');
 	const [pass, setPass] = useState('hola');
@@ -13,12 +13,12 @@ const Login=()=>{
 	const  logan = () => {
 		console.log(email)
 		console.log(pass)
-	
-		axi.post('/api/auth/login',{"email":email,"password":pass})
+		axi.post('/api/auth/login',{"email":email,"password":pass,})
 		.then(async response=> {
 			console.log(response.data);
 			Alert.alert('Esta sesion expira el '+response.data.expires_at)
 			await AsyncStorage.setItem('secure_token',response.data.access_token);
+			props.auth(true)
 		}).catch(e=>{
 			console.log(e.response.data)
 			Alert.alert('Las credenciales no coinciden con nuestras bases de datos')
