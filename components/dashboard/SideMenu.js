@@ -5,6 +5,7 @@ import {NavigationActions} from 'react-navigation';
 import {ScrollView, Text, View,Button,TouchableOpacity,AsyncStorage} from 'react-native';
 import Icon from "react-native-vector-icons/Entypo";
 import {UserContext} from '../../UserContext';
+import {Divider} from 'react-native-elements'
 
 const SideMenu=(props)=>{
 	const [user,setAuth,setLog,axi]=useContext(UserContext);
@@ -28,14 +29,20 @@ const SideMenu=(props)=>{
 			<ScrollView>
 				<View>
 					<Text style={styles.sectionHeadingStyle}>
-						Section 1
+						Proveedores
 					</Text>
-					<View style={styles.navSectionStyle}>
-						<Text style={styles.navItemStyle} onPress={navigateToScreen('Hola')}>
-							Page1
+					<View>
+						<Text style={styles.navItemStyle} onPress={navigateToScreen('NewProveedor')}>
+							Nuevo Proveedor
+						</Text>
+					</View>
+					<View>
+						<Text style={styles.navItemStyle} onPress={navigateToScreen('ShowProveedor')}>
+							Mis Proveedores
 						</Text>
 					</View>
 				</View>
+				<Divider style={{ backgroundColor: 'blue' }} />
 			</ScrollView>
 			<TouchableOpacity onPress={exit} style={styles.footerContainer}>
 			<View style={{flexDirection: 'row', alignItems: 'center'}}>

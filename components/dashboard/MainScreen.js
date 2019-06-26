@@ -1,21 +1,15 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Button
-} from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
 
-class MainScreen extends Component {
-  render () {
+MainScreen=()=>{
+
     return (
       <View style={styles.container}>
-        <Text>Main</Text>
-        <Button onPress={() => this.props.navigation.navigate("Detail")} title="Detail Page" />
+        <Text>WELCOME TO INSUMOS APP</Text>
       </View>
-    );
+    )
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {
