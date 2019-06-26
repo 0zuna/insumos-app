@@ -43,6 +43,22 @@ const SideMenu=(props)=>{
 					</View>
 				</View>
 				<Divider style={{ backgroundColor: 'blue' }} />
+				<View>
+					<Text style={styles.sectionHeadingStyle}>
+						Productos
+					</Text>
+					<View>
+						<Text style={styles.navItemStyle} onPress={navigateToScreen('NewProducto')}>
+							Nuevo Producto
+						</Text>
+					</View>
+					{<View>
+						<Text style={styles.navItemStyle} onPress={navigateToScreen('ShowProducto')}>
+							Mis Productos
+						</Text>
+					</View>}
+				</View>
+				<Divider style={{ backgroundColor: 'blue' }} />
 			</ScrollView>
 			<TouchableOpacity onPress={exit} style={styles.footerContainer}>
 			<View style={{flexDirection: 'row', alignItems: 'center'}}>

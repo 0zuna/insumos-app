@@ -3,8 +3,12 @@ import { Platform, StyleSheet, Text, View, TouchableOpacity } from 'react-native
 import { createStackNavigator } from  'react-navigation';
 import IOSIcon from "react-native-vector-icons/Ionicons";
 import MainScreen from "./MainScreen";
+//Proveedor
 import NewProveedor from "./views/proveedor/NewProveedor";
 import ShowProveedor from "./views/proveedor/ShowProveedor";
+//producto
+import NewProducto from "./views/producto/NewProducto";
+import ShowProducto from "./views/producto/ShowProducto";
 
 const stackNav = createStackNavigator({
 	Main : {
@@ -27,6 +31,14 @@ const stackNav = createStackNavigator({
 	ShowProveedor: {
 		screen: ShowProveedor,
 		navigationOptions: ({navigation}) => ({title: "Mis Proveedores"})
+	},
+	NewProducto: {
+		screen: NewProducto,
+		navigationOptions: ({navigation}) => ({title: "Nuevo Producto"})
+	},
+	ShowProducto: {
+		screen: ShowProducto,
+		navigationOptions: ({navigation}) => ({title: "Mis Productos"})
 	},
 });
 
