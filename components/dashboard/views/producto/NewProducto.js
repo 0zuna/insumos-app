@@ -23,6 +23,9 @@ NewProducto = () =>{
 			Alert.alert('Producto guardado n_n')
 			setProducto({})
 		})
+		.catch((response)=>{
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo n_n")
+		})
 	}
 
 	if(loader)

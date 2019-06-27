@@ -25,6 +25,9 @@ NewProveedor = () =>{
 			setForma('')
 			Alert.alert('Proveedor guardado n_n')
 		})
+		.catch((response)=>{
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo n_n")
+		})
 	}
 	return (
 		<ThemeProvider theme={{ colors: {primary: 'black'}}}>
