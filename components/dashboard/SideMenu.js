@@ -47,7 +47,7 @@ const SideMenu=(props)=>{
 						</Text>
 					</View>
 				</View>
-				<Divider style={{ backgroundColor: 'blue' }} />
+				<Divider />
 				<View>
 					<Text style={styles.sectionHeadingStyle}>
 						Productos
@@ -63,7 +63,7 @@ const SideMenu=(props)=>{
 						</Text>
 					</View>
 				</View>
-				<Divider style={{ backgroundColor: 'blue' }} />
+				<Divider />
 				<View>
 					<Text style={styles.sectionHeadingStyle}>
 						Entradas
@@ -74,7 +74,7 @@ const SideMenu=(props)=>{
 						</Text>
 					</View>
 				</View>
-				<Divider style={{ backgroundColor: 'blue' }} />
+				<Divider />
 				<View>
 					<Text style={styles.sectionHeadingStyle}>
 						Salidas
