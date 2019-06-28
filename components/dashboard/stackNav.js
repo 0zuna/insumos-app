@@ -11,6 +11,8 @@ import NewProducto from "./views/producto/NewProducto";
 import ShowProducto from "./views/producto/ShowProducto";
 //entrada
 import NewEntrada from "./views/entrada/NewEntrada";
+//salida
+import NewSalida from "./views/salida/NewSalida";
 
 const stackNav = createStackNavigator({
 	Main : {
@@ -45,6 +47,10 @@ const stackNav = createStackNavigator({
 	NewEntrada: {
 		screen: NewEntrada,
 		navigationOptions: ({navigation}) => ({title: "Entrada de productos"})
+	},
+	NewSalida: {
+		screen: NewSalida,
+		navigationOptions: ({navigation}) => ({title: "Salida de productos"})
 	},
 });
 
