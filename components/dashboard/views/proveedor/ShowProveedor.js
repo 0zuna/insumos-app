@@ -19,6 +19,9 @@ ShowProveedor = () =>{
 			setProv(response.data)
 			setLoader(false)
 		})
+		.catch((response)=>{
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
+		})
 	},[])
 
 	const update=()=>{
@@ -31,6 +34,9 @@ ShowProveedor = () =>{
 			setProv(prov)
 			setModalVisible(false)
 		})
+		.catch((response)=>{
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
+		})
 	}
 
 	const _delete=()=>{
@@ -39,6 +45,9 @@ ShowProveedor = () =>{
 			prov=proveedores.filter(a=>a.id!==proveedor.id)
 			setProv(prov)
 			setModalVisible(false)
+		})
+		.catch((response)=>{
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	}
 

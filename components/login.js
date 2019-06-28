@@ -18,6 +18,7 @@ const Login=props=>{
 			console.log(response.data);
 			Alert.alert('Esta sesion expira el '+response.data.expires_at)
 			await AsyncStorage.setItem('secure_token',response.data.access_token);
+			props.axi.defaults.headers.common['Authorization'] = 'Bearer '+response.data.access_token;
 			props.auth(true)
 		}).catch(e=>{
 			console.log(e.response.data)

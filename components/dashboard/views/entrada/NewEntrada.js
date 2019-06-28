@@ -21,7 +21,7 @@ NewEntrada= () =>{
 			Alert.alert("Entrada",`Se a registrado entrada para:\n${nombre} x${count} \ndescripcion:${descripcion}`)
 		})
 		.catch((response)=>{
-			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo n_n")
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	}
 	return (

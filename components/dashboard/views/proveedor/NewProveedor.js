@@ -18,15 +18,15 @@ NewProveedor = () =>{
 	const register=()=>{
 		axi.post('/api/auth/proveedor',{nombre,domicilio,telefono,email,forma_pago})
 		.then((response)=>{
+			Alert.alert('Proveedor',`El proveedor ${nombre} a sido guardado`)
 			setNombre('')
 			setDomicilio('')
 			setTelefono('')
 			setEmail('')
 			setForma('')
-			Alert.alert('Proveedor guardado n_n')
 		})
 		.catch((response)=>{
-			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo n_n")
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	}
 	return (

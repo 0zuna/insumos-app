@@ -19,6 +19,9 @@ ShowProducto = () =>{
 			setProductos(response.data)
 			setLoader(false)
 		})
+		.catch((response)=>{
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
+		})
 	},[])
 
 	const update=()=>{
@@ -31,6 +34,9 @@ ShowProducto = () =>{
 			setProductos(prod)
 			setModalVisible(false)
 		})
+		.catch((response)=>{
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
+		})
 	}
 
 	const _delete=()=>{
@@ -39,6 +45,9 @@ ShowProducto = () =>{
 			prod=productos.filter(a=>a.id!==producto.id)
 			setProductos(prod)
 			setModalVisible(false)
+		})
+		.catch((response)=>{
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	}
 

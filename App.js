@@ -24,7 +24,7 @@ const App=()=>{
 	fetchData()
 	},[])
 	if(auth)return <UserProvider axi={axi} auth={[auth,setAuth]} log={[log,setLog]} user={[user,setUser]}><Dashboard /></UserProvider>
-	if(log)return <Login auth={setAuth}/>
+	if(log)return <Login axi={axi} auth={setAuth}/>
 	
 	return (
 		<View style={{flex: 1,justifyContent: 'center'}}>

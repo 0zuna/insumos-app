@@ -20,11 +20,11 @@ NewProducto = () =>{
 	const register=()=>{
 		axi.post('/api/auth/producto',producto)
 		.then((response)=>{
-			Alert.alert('Producto guardado n_n')
+			Alert.alert('Producto',`Producto ${producto.nombre} guardado`)
 			setProducto({})
 		})
 		.catch((response)=>{
-			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo n_n")
+			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	}
 
