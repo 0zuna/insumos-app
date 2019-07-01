@@ -31,10 +31,10 @@ NewEntrada= () =>{
 			nombre=response.data.producto.nombre
 			descripcion=response.data.producto.descripcion
 			count=response.data.entrada.cantidad
-			Alert.alert("Entrada",`Se a registrado entrada para:\n${nombre} x${count} \ndescripcion:${descripcion}`)
+			Alert.alert("Entrada",`Se ha registrado entrada para:\n${nombre} x${count} \ndescripcion:${descripcion}`)
 		})
 		.catch((response)=>{
-			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
+			Alert.alert("Error","Se ha producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	}
 

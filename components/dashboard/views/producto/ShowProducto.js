@@ -20,7 +20,7 @@ ShowProducto = () =>{
 			setLoader(false)
 		})
 		.catch((response)=>{
-			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
+			Alert.alert("Error","Se ha producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	},[])
 
@@ -35,7 +35,7 @@ ShowProducto = () =>{
 			setModalVisible(false)
 		})
 		.catch((response)=>{
-			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
+			Alert.alert("Error","Se ha producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	}
 
@@ -47,7 +47,7 @@ ShowProducto = () =>{
 			setModalVisible(false)
 		})
 		.catch((response)=>{
-			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
+			Alert.alert("Error","Se ha producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	}
 
@@ -69,7 +69,7 @@ ShowProducto = () =>{
 					</View>
 					<Input onChangeText={(t)=>setProducto({...producto,nombre:t})} value={producto.nombre} placeholder='Nombre del producto' leftIcon={<Icon name='cube' size={24}/>}/>
 					<Input onChangeText={(t)=>setProducto({...producto,codigo:t})} value={producto.codigo} placeholder='Codigo' leftIcon={<Icon name='barcode' size={24}/>}/>
-					<Input onChangeText={(t)=>setProducto({...producto,precio:t})} value={producto.precio} placeholder='Precio' leftIcon={<Icon name='dollar' size={24}/>}/>
+					<Input onChangeText={(t)=>setProducto({...producto,precio:t})} value={String(producto.precio)} placeholder='Precio' leftIcon={<Icon name='dollar' size={24}/>}/>
 					<Input onChangeText={(t)=>setProducto({...producto,descripcion:t})} value={producto.descripcion} placeholder='Descripcion' leftIcon={<Icon name='clipboard' size={24} color='black'/>}/>
 					<View style={{margin:20}}>
 						<Button onPress={update} title="Actualizar" type="clear"/>

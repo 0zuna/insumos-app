@@ -30,11 +30,27 @@ NewSalida = () =>{
 			setSalida({})
 			nombre=response.data.producto.nombre
 			descripcion=response.data.producto.descripcion
-			count=response.data.salida.cantidad
-			Alert.alert("Salida",`Se a registrado salida para:\n${nombre} x${count} \ndescripcion:${descripcion}`)
+			disponibles=response.data.disponibilidad.disponibles
+			if(response.status==201){
+				count=response.data.salida.cantidad
+				if(response.data.disponibilidad.porciento<=50){
+					Alert.alert(
+						"Disponibilidad de productos por debajo del 50%",
+						`Favor de consultar con el administrador de productos ${nombre}`,
+						[{
+							text: 'OK', onPress: () =>Alert.alert("Salida",`Se ha registrado salida para:\n${nombre} x${count} \ndescripcion:${descripcion} \ndisponibles:${disponibles}x`)
+						}]
+					)
+				}else
+					Alert.alert("Salida",`Se ha registrado salida para:\n${nombre} x${count} \ndescripcion:${descripcion} \ndisponibles:${disponibles}x`)
+			}
+			else{
+				Alert.alert("Error",`${disponibles}x ${nombre} disponibles`)
+			}
 		})
 		.catch((response)=>{
-			Alert.alert("Error","Se a producido un error porfavor verifique sus datos y vuelva a intentarlo")
+			console.log(response)
+			Alert.alert("Error","Se ha producido un error porfavor verifique sus datos y vuelva a intentarlo")
 		})
 	}
 
