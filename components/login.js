@@ -7,8 +7,8 @@ import {AsyncStorage} from 'react-native';
 
 const Login=props=>{
 	const [user, setUser] = useState({});
-	const [email, setEmail] = useState('hola@hotmail.com');
-	const [pass, setPass] = useState('hola');
+	const [email, setEmail] = useState('');
+	const [pass, setPass] = useState('');
 	//useEffect(()=>{console.log(email)});
 	const  logan = () => {
 		console.log(email)

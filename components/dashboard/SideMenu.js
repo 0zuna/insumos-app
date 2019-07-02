@@ -19,12 +19,14 @@ const SideMenu=(props)=>{
 		});
 		props.navigation.dispatch(navigateAction);
 	}
+
 	exit=()=>{
 		setAuth(false)
 		axi.get('/api/auth/logout').then((response)=>{
 			setLog(true)
 		});
 	}
+
 	return (
 		<View style={styles.container}>
 			<View style={{alignItems: 'center',justifyContent:'center'}}>
@@ -82,6 +84,17 @@ const SideMenu=(props)=>{
 					<View>
 						<Text style={styles.navItemStyle} onPress={navigateToScreen('NewSalida')}>
 							Salida de Productos
+						</Text>
+					</View>
+				</View>
+				<Divider />
+				<View>
+					<Text style={styles.sectionHeadingStyle}>
+						Reporte
+					</Text>
+					<View>
+						<Text style={styles.navItemStyle} onPress={navigateToScreen('NewBalance')}>
+							Balance
 						</Text>
 					</View>
 				</View>
